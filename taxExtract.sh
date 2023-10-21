@@ -1,4 +1,6 @@
-cat prokaryotes.csv | grep -w -v 'algae' | cat prokaryotes.csv | grep -w -v 'algae' | grep -w -v 'uncultured' | uniq | cut -d ' ' -f1,2 | cut -c 2- > taxnames
+#!/bin/sh
+
+cat source.csv | grep -w -v 'algae' | cat source.csv | grep -w -v 'algae' | grep -w -v 'uncultured' | uniq | cut -d ' ' -f1,2 | cut -c 2- > taxnames
 
 sed -i 's/["]//g' taxnames
 
